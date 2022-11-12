@@ -1,0 +1,10 @@
+#index {
+  background-color: #9a616d;
+  height: -webkit-calc(100vh - 50px);
+  height: -moz-calc(100vh - 50px);
+  height: calc(100vh - 50px);
+}
+
+.indexContent {
+	border-radius: 1rem
+}
