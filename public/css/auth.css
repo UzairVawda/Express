@@ -1,6 +1,10 @@
 #authContainer {
   background-color: #9a616d;
-  height: 100vh;
+  height: 100%;
+}
+
+.authCard {
+	margin-top: 5%;
 }
 
 .signUpImg {

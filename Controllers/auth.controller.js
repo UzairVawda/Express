@@ -9,16 +9,15 @@ function getSignup(req, res, next) {
 }
 
 async function signupUser(req, res, next) {
-	console.log("registering user")
-	const body = req.body
-	console.log(body)
-	const newUser = new User(body.userName, body.userEmail, body.userPassword, body.authorCheck, body.viewerCheck)
-	
+	const body = req.body;
+	const newUser = new User(body.userName, body.userEmail, body.userPassword, body.authorCheck, body.viewerCheck);
 	try {
 		await newUser.createUser();
+		res.render('blog/viewAllBlogs')
 	} catch (error) {
 		console.log('failed to create user')
-		next()
+		next(error);
+		return
 	}
 }
 
