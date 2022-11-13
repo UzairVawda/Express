@@ -1,17 +1,18 @@
 const path = require("path");
 
 // Importing express session package
-const expressSession = require('express-session');
+const expressSession = require("express-session");
 
 // database
 const db = require("./Data/database");
 
 // Session Config File
-const sessionConfig = require('./Config/session');
+const sessionConfig = require("./Config/session");
 
 // fetching auth routes
 const sharedRoutes = require("./Router/shared.routes.js");
 const authRoutes = require("./Router/auth.routes");
+const blogRoutes = require("./Router/blog.routes");
 
 const express = require("express");
 const app = express();
@@ -34,6 +35,7 @@ app.use(
 
 app.use(sharedRoutes);
 app.use(authRoutes);
+app.use(blogRoutes);
 
 app.use(function (req, res, next) {
   res.send("PAGE NOT FOUND!");

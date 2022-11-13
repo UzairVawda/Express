@@ -19,6 +19,17 @@ class User {
 		}
 		await db.getDB().collection('users').insertOne(user)
 	}
+
+	async userExistCheck() {
+		console.log('checking user')
+		console.log(this.userEmail)
+		const user = await db.getDB().collection('users').findOne({ email: this.userEmail })
+		console.log(user)
+		if (user) {
+			return true
+		}
+		return false
+	}
 }
 
 module.exports = User

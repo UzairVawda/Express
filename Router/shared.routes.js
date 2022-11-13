@@ -1,5 +1,5 @@
 //fetching auth controller
-const sharedController = require("../Controllers/shared.controller.js");
+const sharedController = require("../Controllers/shared.controller");
 
 const express = require("express");
 
